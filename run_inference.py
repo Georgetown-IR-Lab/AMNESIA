@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Large-scale batched generation for patient QA with rank-sharding and resume.
 
-Adapted from open-unlearning inference script. Adds:
   - Data sharding across torchrun/srun-launched processes via LOCAL_RANK/WORLD_SIZE
   - Per-rank output file so append writes are race-free: <output>.rank{R}.jsonl
   - Per-process single-GPU placement via device_map={"": f"cuda:{local_rank}"}
